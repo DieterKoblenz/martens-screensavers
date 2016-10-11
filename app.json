@@ -65,6 +65,13 @@
 				"nl": "Regenboog op 10% intensiteit"
 			}
 		}
+				{
+			"name": "slow_rainbow",
+			"title": {
+				"en": "Rainbow very slow",
+				"nl": "Langzame regenboog"
+			}
+		}
 	],
 	"permissions": [
 		"homey:manager:ledring"
