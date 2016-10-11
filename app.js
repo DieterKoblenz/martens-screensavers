@@ -343,7 +343,7 @@ for( var pixel = 0; pixel < 24; pixel++ ) {
     var hue = (pixel/(24)) * 360;
     var color = hsvToRgbLow( hue, 100, 100 )
 
-    frame_faint_rainbow.push({
+    frame_slow_rainbow.push({
         r: color[0], // 0 - 255
         g: color[1], // 0 - 255
         b: color[2]  // 0 - 255
@@ -417,7 +417,7 @@ function hsvToRgbLow(h, s, v) {
             b = q;
     }
 
-    return [Math.round(r * 25), Math.round(g * 25), Math.round(b * 25)];
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
 }
 
 frames_slow_rainbow.push(frame_slow_rainbow);
@@ -433,7 +433,7 @@ var animation_slow_rainbow = new Animation({
 })
 
 animation_slow_rainbow.register(function(err, result){
-	Homey.manager('ledring').registerScreensaver('faint_rainbow', animation_slow_rainbow)
+	Homey.manager('ledring').registerScreensaver('slow_rainbow', animation_slow_rainbow)
 	if( err ) return Homey.error(err);
 	animation_slow_rainbow.on('screensaver_start', function( screensaver_id ){
 		Homey.log('Screensaver started')
